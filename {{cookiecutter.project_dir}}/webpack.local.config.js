@@ -9,7 +9,7 @@ var config = require('./webpack.base.config.js')
 //   './assets/js/index'
 // ]
 // config.output.publicPath = 'http://localhost:8080/assets/bundles/' // override django's STATIC_URL for webpack bundles
-config.output.filename = '[name].[ext]';  // prevent to many bundles from being made
+config.output.filename = '[name].js';  // prevent to many bundles from being made
 
 // Add HotModuleReplacementPlugin and BundleTracker plugins
 config.plugins = config.plugins.concat([

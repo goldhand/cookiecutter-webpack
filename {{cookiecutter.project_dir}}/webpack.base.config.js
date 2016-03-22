@@ -10,7 +10,7 @@ module.exports = {
 
   output: {
       path: path.resolve('{{ cookiecutter.local_output_path }}'),
-      filename: "[name]-[hash].[ext]"
+      filename: "[name]-[hash].js"
   },
 
   plugins: [
