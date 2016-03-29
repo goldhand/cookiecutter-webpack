@@ -10,5 +10,6 @@
     "email": "Your email",
     "description": "A short description of the project.",
     "domain_name": "{{ cookiecutter.repo_name }}",
-    "version": "0.1.0"
+    "version": "0.1.0",
+    "existing_project": "n"
 }
