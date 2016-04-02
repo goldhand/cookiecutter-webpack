@@ -8,7 +8,7 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 local_output_path = '{{ cookiecutter.local_output_path }}'
 production_output_path = '{{ cookiecutter.production_output_path }}'
-is_existing = '{{ cookiecutter.existing_project }}'
+is_existing = '{{ cookiecutter.existing_project }}' == 'y'
 
 
 def remove_file(project_directory, file_name):

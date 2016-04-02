@@ -1,7 +1,7 @@
 import os
 import shutil
 
-is_existing = '{{ cookiecutter.existing_project }}'
+is_existing = '{{ cookiecutter.existing_project }}' == 'y'
 # Get the root project directory
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
