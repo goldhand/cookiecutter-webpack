@@ -1,5 +1,5 @@
-var path = require("path")
-var webpack = require('webpack')
+const path = require("path")
+const webpack = require('webpack')
 
 module.exports = {
   context: __dirname,
@@ -22,7 +22,6 @@ module.exports = {
       {test: /\.css$/, loader: 'style-loader!css-loader'},
       {test: /\.(png|jpg|gif)$/, loader: 'url-loader', query: {limit: 8192}},  // inline base64 URLs <=8k
       {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader'},
-      {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
     ] // add all common loaders here
   },
 }

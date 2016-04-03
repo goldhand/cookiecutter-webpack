@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/.bin/webpack --config=webpack.local.config.js",
-    "start": "./node_modules/.bin/webpack-dev-server --config=webpack.local.config.js"
+    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config=webpack.local.config.js --progress --hot"
   },
   "repository": {
     "type": "git",
@@ -19,13 +19,28 @@
   },
   "homepage": "https://github.com/{{ cookiecutter.repo_owner }}/{{ cookiecutter.repo_name }}#readme",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
+    "babel-eslint": "^6.0.2",
     "babel-loader": "^6.2.4",
-    "babel-preset-es2015-native-modules": "^6.6.0",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-preset-es2015-webpack": "^6.4.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
+    "es6-promise": "^3.1.2",
+    "eslint": "^2.6.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-react": "^4.2.3",
     "file-loader": "^0.8.5",
-    "style-loader": "^0.13.0",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-transform-hmr": "^1.0.4",
+    "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.4",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^2.0.0-beta"
   }
 }

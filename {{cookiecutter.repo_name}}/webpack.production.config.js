@@ -1,8 +1,11 @@
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack')
 
-var config = require('./webpack.base.config.js')
+const config = require('./webpack.base.config.js')
 
-config.output.path = require('path').resolve('{{ cookiecutter.production_output_path }}')
+
+config.output.path = path.resolve('{{ cookiecutter.production_output_path }}')
+config.output.publicPath = 'https://s3.amazonaws.com/';
 
 config.plugins = config.plugins.concat([
 
@@ -23,6 +26,5 @@ config.plugins = config.plugins.concat([
   })
 ])
 
-//config.output.publicPath = `https://s3.amazonaws.com/${process.env.DJANGO_AWS_STORAGE_BUCKET_NAME}/dist/`;
 
-module.exports = config
+module.exports = config;
