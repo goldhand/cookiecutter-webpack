@@ -11,9 +11,12 @@
     "react"
   ],
 
-  "ecmaFeatures": {
-    "modules": true,
-    "jsx": true
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
 
   "rules": {
@@ -38,7 +41,7 @@
     "quote-props": [2, "as-needed"],
     "quotes": [2, "single", "avoid-escape"],
     "space-before-function-paren": [2, "never"],
-    "space-after-keywords": [2, "always"],
+    "keyword-spacing": [2, {"before": true, "after": true}],
     "space-before-blocks": [2, "always"],
     "space-in-parens": [2, "never"],
     "spaced-comment": [2, "always"],
@@ -53,12 +56,13 @@
       }
     }],
 
+    "jsx-quotes": [2, "prefer-double"],
+
     "babel/object-shorthand": 0,
     "babel/generator-star-spacing": [2, {"before": true, "after": false}],
 
     "react/jsx-boolean-value": [2, "never"],
     "react/jsx-no-undef": 2,
-    "react/jsx-quotes": [2, "double", "avoid-escape"],
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/no-did-mount-set-state": 1,
@@ -76,6 +80,7 @@
     "no-catch-shadow": 2,
     "no-class-assign": 2,
     "no-cond-assign": 2,
+    "no-confusing-arrow": 2,
     "no-console": 2,
     "no-const-assign": 2,
     "no-constant-condition": 2,
@@ -90,7 +95,6 @@
     "no-else-return": 0,
     "no-empty": 2,
     "no-empty-character-class": 2,
-    "no-empty-label": 2,
     "no-eq-null": 0,
     "no-eval": 2,
     "no-ex-assign": 2,
@@ -200,7 +204,6 @@
     "semi-spacing": [2, {"before": false, "after": true}],
     "sort-vars": 0,
     "space-infix-ops": 2,
-    "space-return-throw-case": 2,
     "space-unary-ops": [2, {"words": true, "nonwords": false}],
     "use-isnan": 2,
     "valid-typeof": 2,
