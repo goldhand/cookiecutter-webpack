@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/.bin/webpack --config=webpack.local.config.js",
-    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config=webpack.local.config.js --progress --hot"
+    "dev": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config=webpack.local.config.js --progress --hot",
+    {% if cookiecutter.existing_project == 'y' -%}
+    "python": "python manage.py runserver",
+    "start": "npm run dev & npm run python"{% else %}"start": "npm run dev"{%- endif %}
   },
   "repository": {
     "type": "git",
@@ -42,6 +45,9 @@
     "react-transform-hmr": "^1.0.4",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.4",
+    {% if cookiecutter.existing_project == 'y' -%}
+    "webpack-bundle-tracker": "0.0.93",
+    {%- endif %}
     "webpack-dev-server": "^2.0.0-beta"
   }
 }
