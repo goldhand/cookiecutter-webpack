@@ -7,10 +7,9 @@ const
 
   config = require('./webpack.base.config.js');
 
-{% if cookiecutter.existing_project -%}
-config.output.publicPath = 'http://localhost:8080/assets/bundles';
+
+{% if cookiecutter.existing_project == 'y' -%}config.output.publicPath = 'http://localhost:8080/bundles/';
 {% endif -%}
-config.output.filename = '[name].js';
 
 config.plugins = config.plugins.concat([
   new webpack.NoErrorsPlugin(),
@@ -18,13 +17,8 @@ config.plugins = config.plugins.concat([
   new BundleTracker({filename: './webpack-stats.json'}),
   {%- endif %}
 ]);
-
+// local plugins here
 config.module.loaders.push(
-  {
-    test: /\.jsx?$/,
-    exclude: /node_modules/,
-    loaders: ['babel-loader'],
-  }
 );
 
 module.exports = config;

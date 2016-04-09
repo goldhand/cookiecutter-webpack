@@ -5,7 +5,8 @@
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "./node_modules/.bin/webpack --config=webpack.local.config.js",
+    "webpack": "NODE_ENV=production ./node_modules/.bin/webpack --config=webpack.production.config.js --progress",
+    "build": "npm run webpack",
     "dev": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config=webpack.local.config.js --progress --hot",
     {% if cookiecutter.existing_project == 'y' -%}
     "python": "python manage.py runserver",

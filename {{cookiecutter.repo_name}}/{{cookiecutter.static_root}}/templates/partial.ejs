@@ -1,8 +1,8 @@
 <% if (webpackConfig.entry) { %>
-<p>Webpack main entry is: 
+<p>Webpack entry is: 
 <ul>
-<% for (var index in webpackConfig.entry.main) { %>
-  <li><%= webpackConfig.entry.main[index] %></li>
+<% for (var index in webpackConfig.entry) { %>
+  <li><%= webpackConfig.entry[index] %></li>
 <% } %>
 </ul>
 <% } else { %>

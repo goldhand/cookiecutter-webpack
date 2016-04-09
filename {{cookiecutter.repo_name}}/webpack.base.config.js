@@ -27,10 +27,21 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),
+    // shared stuff between chuncks
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity,
+      filename: 'vendor-[hash].js'
+    }),
   ], // add all common plugins here
 
   module: {
     loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loaders: ['babel-loader'],
+      },
       {
         test: /\.ejs$/,
         loader: 'ejs',
@@ -45,5 +56,13 @@ module.exports = {
       {test: /\.(png|jpg|gif)$/, loader: 'url-loader', query: {limit: 8192}},  // inline base64 URLs <=8k
       {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader'},
     ], // add all common loaders here
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    modules: [
+      path.resolve(__dirname, '{{ cookiecutter.static_root }}'),
+      'node_modules'
+    ]
   },
 }
