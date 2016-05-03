@@ -2,14 +2,12 @@
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name|replace(' ', '')|lower }}",
     "repo_owner": "github_username",
-    "project_dir": "{{ cookiecutter.project_name|replace(' ', '')|lower }}",
-    "static_root": "assets",
-    "local_output_path": "assets/bundles/",
-    "production_output_path": "assets/dist/",
+    "static_root": "src",
+    "local_output_path": "src/bundles/",
+    "production_output_path": "src/dist/",
     "author_name": "Your Name",
     "email": "Your email",
     "description": "A short description of the project.",
-    "domain_name": "{{ cookiecutter.repo_name }}",
     "version": "0.1.0",
     "existing_project": "n"
 }
