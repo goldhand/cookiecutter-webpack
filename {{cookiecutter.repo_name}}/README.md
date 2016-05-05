@@ -74,3 +74,19 @@ There are two setting configurations: _Local_ and _Production_. Both of these se
 
 ### Templates
 [Template options](https://github.com/jaketrent/html-webpack-template/blob/faac42d0720d52b444e65aa9a151e0ad8504effc/README.md#basic-usage)
+
+
+-----------------------------------
+
+Redux Dev Tools
+---------------
+Redux dev tools allows you to debug redux. See the [redux-devtools github repository](https://github.com/gaearon/redux-devtools) for more info.
+
+You can add more [monitors](https://github.com/gaearon/redux-devtools/blob/a21905cbdeb22fc67c3f16caa8752cb5b4133b32/README.md#custom-monitors) by installing the monitors package and adding the component inside the `DockMonitor` component found in [`./{{ cookiecutter.static_root }}/containers/DevTools.js`](containers/DevTools.js).
+
+### Controls
+The controls can be configured by editing the `DockMonitor` component's attributes. Currently the controls are:
+
+    toggleVisibilityKey="ctrl-h"
+    changePositionKey="ctrl-q"
+    changeMonitorKey="ctrl-m"
