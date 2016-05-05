@@ -1,3 +1,5 @@
+import './Counter.less';
+
 import React, {PropTypes, Component} from 'react';
 
 
@@ -11,7 +13,7 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="counter">
         <h1>Counter: {this.props.value}</h1>
         <button onClick={this.props.incrementCounter}>+</button>
         <button onClick={this.props.decrementCounter}>-</button>
