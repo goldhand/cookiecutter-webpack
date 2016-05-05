@@ -12,3 +12,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Readme to reflect redux-react application structure (@goldhand)
+
+
+### [2016-05-05]
+### Added
+- React-devtools notes to Readme (@goldhand)
+- Force-case-sensitivity-webpack-plugin to webpack local config (@goldhand)
+- Less and less loader to requirements (@goldhand)
+- Less file to counter demo (@goldhand)
+
+### Fix
+- App.js casing (@goldhand)
+
+### Changed
+- Counter demo component to have its own directory (@goldhand)
