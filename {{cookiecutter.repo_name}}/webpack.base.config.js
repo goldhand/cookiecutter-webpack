@@ -31,7 +31,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity,
-      filename: 'vendor-[hash].js'
+      filename: 'vendor-[hash].js',
     }),
   ], // add all common plugins here
 
@@ -62,7 +62,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     modules: [
       path.resolve(__dirname, '{{ cookiecutter.static_root }}'),
-      'node_modules'
-    ]
+      'node_modules',
+    ],
   },
-}
+};
