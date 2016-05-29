@@ -2,6 +2,8 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from '../reducers';
 import {persistState} from 'redux-devtools';
 
+
+// credit: @nicksp
 export default function configureStore(initialState) {
 
   let middleware = applyMiddleware();
