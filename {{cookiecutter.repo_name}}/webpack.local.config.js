@@ -1,10 +1,7 @@
 const
-  path = require('path'),
   webpack = require('webpack'),
-  ForceCaseSensitivityPlugin = require('force-case-sensitivity-webpack-plugin'),
-  {% if cookiecutter.existing_project == 'y' -%}
-  BundleTracker = require('webpack-bundle-tracker'),
-  {%- endif %}
+  ForceCaseSensitivityPlugin = require('force-case-sensitivity-webpack-plugin'),{% if cookiecutter.existing_project == 'y' %}
+  BundleTracker = require('webpack-bundle-tracker'),{% endif %}
 
   config = require('./webpack.base.config.js');
 
@@ -14,11 +11,10 @@ const
 
 config.plugins = config.plugins.concat([
   new ForceCaseSensitivityPlugin(),  // OSX wont check but other unix os will
-  new webpack.NoErrorsPlugin(),
-  {% if cookiecutter.existing_project == 'y' -%}
+  new webpack.NoErrorsPlugin(),{% if cookiecutter.existing_project == 'y' %}
+  // local bundle stats file
   new BundleTracker({filename: './webpack-stats.json'}),
-  {%- endif %}
-]);
+{% endif %}]);
 // local plugins here
 config.module.loaders.push(
 );
