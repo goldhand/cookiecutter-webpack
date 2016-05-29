@@ -26,3 +26,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Counter demo component to have its own directory (@goldhand)
+
+
+### [2016-05-29]
+### Fix
+- Lint errors on webpack configs (@goldhand)
+
+### Removed
+- Redux DevTools from production (@goldhand)
+- Devtools filter monitor (@goldhand)
