@@ -34,6 +34,9 @@ nosetests.xml
 htmlcov
 .cache/
 
+# egg
+*.egg-info
+
 # Translations
 *.mo
 *.pot

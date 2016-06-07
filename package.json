@@ -2,7 +2,6 @@
   "name": "cookiecutter-webpack",
   "version": "0.2.0",
   "description": "Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux.",
-  "main": ".",
   "directories": {
     "hooks": "hooks",
     "source": "{{cookiecutter.repo_name}}",
