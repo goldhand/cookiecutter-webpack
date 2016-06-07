@@ -1,0 +1,38 @@
+{
+  "name": "cookiecutter-webpack",
+  "version": "0.1.0",
+  "description": "Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux.",
+  "main": ".",
+  "directories": {
+    "hooks": "hooks",
+    "source": "{{cookiecutter.repo_name}}",
+    "test": "tests"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "eslint": "^2.11.1",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-react": "^5.0.1"
+  },
+  "scripts": {
+    "test": "py.test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hzdg/cookiecutter-webpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "es6",
+    "react",
+    "redux",
+    "cookiecutter",
+    "boilerplate"
+  ],
+  "author": "Will Farley <a.will.farley@gmail.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/hzdg/cookiecutter-webpack/issues"
+  },
+  "homepage": "https://github.com/hzdg/cookiecutter-webpack#readme"
+}
