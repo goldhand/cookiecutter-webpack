@@ -2,16 +2,23 @@
 All enhancements and patches to Cookiecutter Django will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-### [2016-05-04]
-### Added
-- Redux-react configurations (@goldhand)
-- Test commands to npm (@goldhand)
-- Package requirements to include redux-react requirements (@goldhand)
-- Redux-react counter demo application (@goldhand)
-- Redux dev tools (@goldhand)
 
-### Changed
-- Readme to reflect redux-react application structure (@goldhand)
+### [2016-06-07]
+### Added
+- Eslint ignore for tests (@goldhand)
+- Eslint-loader to local config (@goldhand)
+- Dependencies (pypi and npm) (@goldhand)
+- Py.tests for default and existing_project builds (@golhand)
+- Py.tests to check builds comply to their .eslint config (@goldhand)
+
+
+### [2016-05-29]
+### Fix
+- Lint errors on webpack configs (@goldhand)
+
+### Removed
+- Redux DevTools from production (@goldhand)
+- Devtools filter monitor (@goldhand)
 
 
 ### [2016-05-05]
@@ -28,10 +35,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Counter demo component to have its own directory (@goldhand)
 
 
-### [2016-05-29]
-### Fix
-- Lint errors on webpack configs (@goldhand)
+### [2016-05-04]
+### Added
+- Redux-react configurations (@goldhand)
+- Test commands to npm (@goldhand)
+- Package requirements to include redux-react requirements (@goldhand)
+- Redux-react counter demo application (@goldhand)
+- Redux dev tools (@goldhand)
 
-### Removed
-- Redux DevTools from production (@goldhand)
-- Devtools filter monitor (@goldhand)
+### Changed
+- Readme to reflect redux-react application structure (@goldhand)
