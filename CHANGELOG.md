@@ -11,6 +11,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Py.tests for default and existing_project builds (@golhand)
 - Py.tests to check builds comply to their .eslint config (@goldhand)
 
+### Changed
+- Webpack configs are nested in `./config/` directory (@goldhand)
+
 
 ### [2016-05-29]
 ### Fix
