@@ -27,7 +27,6 @@ Start the server
 
 You will have a React / Redux counter app running with redux dev-tools. See the generated `README.md` for an explanation of the react / redux project structure.
 
-
 Integrating into existing projects
 ----------------------------------
 
@@ -61,3 +60,22 @@ The flag `existing_project` will move/remove some files and dependencies and als
 Just make sure you use the `--overwrite-if-exists` [ or `-f`] flag so cookiecutter can work within your existing project structure. You will also probably want to point to your existing projects parent directory and make sure you use the same `repo_name` as the project directory so your `package.json` files are installed at the project root.
 
 	cookiecutter -f -output-dir ../ git@github.com:hzdg/cookiecutter-webpack.git
+
+
+Contributing
+------------
+
+Accepting pull requests!
+
+Clone the project:
+```sh
+$ git clone git@github.com:hzdg/cookiecutter-webpack.git
+```
+Install python and npm dependencies:
+```sh
+$ pip install -r requirements.txt && npm install
+```
+Run build tests:
+```sh
+$ npm test
+```
