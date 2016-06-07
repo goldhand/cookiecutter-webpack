@@ -11,6 +11,7 @@ export default class App extends Component {
 
     return (
       <main>
+        <h1>NODE_ENV: {process.env.NODE_ENV}</h1>
         {this.props.children}
       </main>
     );

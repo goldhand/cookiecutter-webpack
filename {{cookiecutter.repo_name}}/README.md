@@ -57,16 +57,20 @@ Configuration
 ### Settings
 There are two setting configurations: _Local_ and _Production_. Both of these settings inherit from the _Base_ settings.
 
-#### Base `./webpack.base.config.js`
+#### Router `./webpack.config.js`
+* Routes to other webpack configs
+* Passes main options to other configs
+
+#### Base `./config/webpack.base.config.js`
 * Provide entry endpoints
 * Output endpoints
 * Common plugins
 
-#### Local `./webpack.local.config.js`
+#### Local `./config/webpack.local.config.js`
 * Point to the local publicPath
 * Local plugins
 
-#### Production `./webpack.production.config.js`
+#### Production `./config/webpack.production.config.js`
 * Point to the production publicPath
 * Minimize code
 * Production plugins
