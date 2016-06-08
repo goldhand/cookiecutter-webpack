@@ -4,6 +4,15 @@ const
   HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
+const HTML_WEBPACK_OPTIONS = {
+  main: {
+    title: '{{ cookiecutter.project_name }}',
+    template: '{{ cookiecutter.static_root }}/templates/default.ejs',
+    inject: false,
+    appMountId: 'main',
+  },
+};
+
 module.exports = (opts) => {
 
   return {
@@ -19,7 +28,7 @@ module.exports = (opts) => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin(opts.htmlWebpackOptions.main),
+      new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),
       // shared stuff between chuncks
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',

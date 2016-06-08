@@ -1,5 +1,5 @@
-const expect = require('expect');
-const deepFreeze = require('deep-freeze');
+import expect, { createSpy, spyOn, isSpy } from 'expect';
+import deepFreeze from 'deep-freeze';
 
 
 const dummyReducer = (state, action) => {

@@ -15,6 +15,20 @@ Start the server
     $ npm start
 
 
+Open up http://localhost:8080 in your browser.
+
+
+Basic Usage
+-----------
+
+### Running tests
+This project uses [`karma`][karma] for running tests with [`mocha`][mocha] for the test framework and @mjackson's [`expect`][expect] library for assertions and test doubles.
+
+    $ npm test
+
+This will run all tests in the [`./{{ cookiecutter.static_root }}/__tests__`][test-dir] directory.
+
+
 ---------------------------------
 
 
@@ -55,7 +69,7 @@ Configuration
 -------------
 
 ### Settings
-There are two setting configurations: _Local_ and _Production_. Both of these settings inherit from the _Base_ settings.
+There are two setting configurations: _Local_ and _Production_. Both of these settings inherit from the _Base_ settings. The main _Router_ will determine which setting is being requested based on the `NODE_ENV`: `[production, local, test]`.
 
 #### Router `./webpack.config.js`
 * Routes to other webpack configs
@@ -94,3 +108,11 @@ The controls can be configured by editing the `DockMonitor` component's attribut
     toggleVisibilityKey="ctrl-h"
     changePositionKey="ctrl-q"
     changeMonitorKey="ctrl-m"
+
+
+<!-- references -->
+[karma]: https://github.com/karma-runner/karma
+[mocha]: https://github.com/mochajs/mocha
+[expect]: https://github.com/mjackson/expect
+
+[test-dir]: /{{ cookiecutter.static_root }}/__tests__/

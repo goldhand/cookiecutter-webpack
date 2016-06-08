@@ -1,7 +1,7 @@
 Cookiecutter-webpack
 ====================
 
-Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux.
+Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux for views and state, and karma + mocha + expect for testing.
 
 
 Getting Started

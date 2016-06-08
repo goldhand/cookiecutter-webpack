@@ -14,14 +14,6 @@ const OPTIONS = {
   projectRoot: __dirname,
   nodeEnv: JSON.stringify(process.env.NODE_ENV),
   cdnPath: JSON.stringify(process.env.CDN_PATH),
-  htmlWebpackOptions: {
-    main: {
-      title: '{{ cookiecutter.project_name }}',
-      template: '{{ cookiecutter.static_root }}/templates/default.ejs',
-      inject: false,
-      appMountId: 'main',
-    },
-  },
 };
 
 module.exports = (() => {
