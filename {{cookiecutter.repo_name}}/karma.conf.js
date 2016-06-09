@@ -8,7 +8,7 @@
 
 const
   baseConfig = require('./config/webpack.base.config')(
-    {projectRoot: __dirname}
+    {PROJECT_ROOT: __dirname}
   );
 
 module.exports = function(config) {
