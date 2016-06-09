@@ -11,9 +11,9 @@
  * @returns {object} - returns a webpack config object
  */
 const OPTIONS = {
-  projectRoot: __dirname,
-  nodeEnv: JSON.stringify(process.env.NODE_ENV),
-  cdnPath: JSON.stringify(process.env.CDN_PATH),
+  PROJECT_ROOT: __dirname,
+  NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+  CDN_PATH: JSON.stringify(process.env.CDN_PATH),
 };
 
 module.exports = (() => {

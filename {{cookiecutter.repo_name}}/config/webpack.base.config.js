@@ -1,7 +1,6 @@
-const
-  path = require('path'),
-  webpack = require('webpack'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 
 const HTML_WEBPACK_OPTIONS = {
@@ -15,15 +14,17 @@ const HTML_WEBPACK_OPTIONS = {
 
 module.exports = (opts) => {
 
+  const {PROJECT_ROOT, NODE_ENV, PUBLIC_PATH} = opts;
+
   return {
-    context: opts.projectRoot,
+    context: PROJECT_ROOT,
 
     entry: {
-      main: path.resolve(opts.projectRoot, '{{ cookiecutter.static_root }}/index'),
+      main: path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/index'),
     },
 
     output: {
-      path: path.resolve(opts.projectRoot, '{{ cookiecutter.local_output_path }}'),
+      path: path.resolve(PROJECT_ROOT, '{{ cookiecutter.local_output_path }}'),
       filename: '[name]-[hash].js',
     },
 
@@ -37,8 +38,8 @@ module.exports = (opts) => {
       }),
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: opts.nodeEnv,
-          PUBLIC_PATH: opts.publicPath,
+          NODE_ENV,
+          PUBLIC_PATH,
         },
       }),
     ], // add all common plugins here
@@ -55,7 +56,7 @@ module.exports = (opts) => {
           loader: 'ejs',
           query: {
             includePaths: [
-              path.resolve(opts.projectRoot, '{{ cookiecutter.static_root }}/templates/'),
+              path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/templates/'),
             ],
           },
         },
@@ -69,7 +70,7 @@ module.exports = (opts) => {
     resolve: {
       extensions: ['', '.js', '.jsx'],
       modules: [
-        path.resolve(opts.projectRoot, '{{ cookiecutter.static_root }}'),
+        path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}'),
         'node_modules',
       ],
     },

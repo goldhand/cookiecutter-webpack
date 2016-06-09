@@ -4,10 +4,11 @@
   "description": "",
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
-    "webpack": "NODE_ENV=production ./node_modules/.bin/webpack --progress",
-    "build": "npm run webpack",
-    "dev": "NODE_ENV=local ./node_modules/.bin/webpack-dev-server --progress --hot",
+    "babel": "./node_modules/.bin/babel-node --presets es2015",
+    "test": "NODE_ENV=test npm run babel -- ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "webpack": "npm run babel -- ./node_modules/.bin/webpack --progress",
+    "build": "NODE_ENV=production npm run webpack",
+    "dev": "NODE_ENV=local npm run babel -- ./node_modules/.bin/webpack-dev-server --progress --hot",
     {% if cookiecutter.existing_project == 'y' -%}
     "python": "python manage.py runserver",
     "start": "npm run dev & npm run python"{% else %}"start": "npm run dev"{%- endif %}
