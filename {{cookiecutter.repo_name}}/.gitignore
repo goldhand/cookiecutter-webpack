@@ -35,5 +35,5 @@ node_modules/
 .sass-cache
 
 # Webpack
-{{ cookiecutter.local_output_path }}
+{{ cookiecutter.static_root }}/bundles/
 {{ cookiecutter.production_output_path }}

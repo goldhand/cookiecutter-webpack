@@ -24,7 +24,7 @@ module.exports = (opts) => {
     },
 
     output: {
-      path: path.resolve(PROJECT_ROOT, '{{ cookiecutter.local_output_path }}'),
+      path: path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/bundles'),
       filename: '[name]-[hash].js',
     },
 
