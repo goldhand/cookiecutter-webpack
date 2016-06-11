@@ -16,13 +16,13 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['mocha'],
     files: [
-      'src/**/__tests__/**/*.js',
+      '{{ cookiecutter.static_root }}/**/__tests__/**/*.js',
     ],
 
     preprocessors: {
       // add webpack as a preprocessor
-      'src/**/*.js': ['webpack', 'sourcemap'],
-      'src/**/__tests__/**/*.js': ['webpack', 'sourcemap'],
+      '{{ cookiecutter.static_root }}/**/*.js': ['webpack', 'sourcemap'],
+      '{{ cookiecutter.static_root }}/**/__tests__/**/*.js': ['webpack', 'sourcemap'],
     },
 
     webpack: {
