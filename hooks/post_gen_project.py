@@ -4,7 +4,6 @@ import shutil
 # Get the root project directory
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
-local_output_path = '{{ cookiecutter.local_output_path }}'
 production_output_path = '{{ cookiecutter.production_output_path }}'
 static_root = '{{ cookiecutter.static_root }}'
 is_existing = '{{ cookiecutter.existing_project }}' == 'y'
@@ -63,9 +62,10 @@ def move_file(project_directory, file_name, target_directory):
 
 def add_webpack_to_gitignore(project_directory):
     """Add webpack config to gitignore."""
-    amend_str = "\n# Webpack\n%s\n%s\n" % (
-        local_output_path,
-        production_output_path)
+    amend_str = "\n# Webpack\n%s\n%s\n%s" % (
+        production_output_path,
+        'webpack-stats.json',
+        'webpack-stats-production.json')
     amend_file(project_directory, '.gitignore', amend_str)
 
 
