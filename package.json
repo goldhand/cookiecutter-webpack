@@ -14,7 +14,8 @@
     "eslint-plugin-react": "^5.0.1"
   },
   "scripts": {
-    "test": "py.test"
+    "test": "py.test",
+    "version": "make test && make changelog && git add -p CHANGELOG.md && git checkout CHANGELOG.md"
   },
   "repository": {
     "type": "git",

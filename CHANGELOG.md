@@ -1,7 +1,3 @@
-# Change Log
-All enhancements and patches to Cookiecutter Django will be documented in this file.
-This project adheres to [Semantic Versioning](http://semver.org/).
-
 
 ### [2016-06-07]
 ### Added
@@ -48,3 +44,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Readme to reflect redux-react application structure (@goldhand)
+
+
+# Change Log
+All enhancements and patches to Cookiecutter Django will be documented in this file.
+This project adheres to [Semantic Versioning](http://semver.org/).
