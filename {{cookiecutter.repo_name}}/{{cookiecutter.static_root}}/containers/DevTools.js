@@ -9,12 +9,15 @@ import Dispatcher from 'redux-devtools-dispatch';
 import MultipleMonitors from 'redux-devtools-multiple-monitors';
 
 
+const REDUX_DEV_TOOLS_VISIBLE = true;
+
 // createDevTools takes a monitor and produces a DevTools component
 export default createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h"
                changePositionKey="ctrl-q"
                changeMonitorKey="ctrl-m"
-               defaultPosition="right">
+               defaultPosition="right"
+               defaultIsVisible={REDUX_DEV_TOOLS_VISIBLE}>
     <MultipleMonitors>
       <LogMonitor theme="nicinabox" />
       <Dispatcher />
