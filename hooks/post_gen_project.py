@@ -8,6 +8,7 @@ production_output_path = '{{ cookiecutter.production_output_path }}'
 static_root = '{{ cookiecutter.static_root }}'
 is_existing = '{{ cookiecutter.existing_project }}' == 'y'
 use_ejs = '{{ cookiecutter.use_ejs }}' == 'y'
+css_extension = '{{ cookiecutter.css_extension }}'
 
 
 def remove_tilda(project_directory, file_name):
@@ -83,6 +84,16 @@ def add_webpack_to_gitignore(project_directory):
 if not use_ejs:
     """Remove the ejs templates."""
     remove_dir(static_root, 'templates')
+
+
+if css_extension != 'less':
+    """Remove less demo"""
+    remove_dir(static_root, 'components/Counter/Counter.less')
+
+
+if css_extension != 'sass':
+    """Remove scss demo"""
+    remove_dir(static_root, 'components/Counter/Counter.scss')
 
 
 if is_existing:

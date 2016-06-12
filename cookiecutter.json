@@ -8,5 +8,6 @@
     "description": "A short description of the project.",
     "version": "0.1.0",
     "existing_project": "n",
+    "css_extension": ["none", "less", "sass"],
     "use_ejs": "{% if cookiecutter.existing_project == 'n' %}y{% else %}n{% endif %}"
 }

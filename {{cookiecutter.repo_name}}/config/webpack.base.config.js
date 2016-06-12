@@ -51,7 +51,8 @@ module.exports = (opts) => {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loaders: ['babel-loader'],
-        },{% if cookiecutter.use_ejs == 'y' %}
+        },
+        {% if cookiecutter.use_ejs == 'y' -%}
         {
           test: /\.ejs$/,
           loader: 'ejs',
@@ -60,8 +61,14 @@ module.exports = (opts) => {
               path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/templates/'),
             ],
           },
-        },{% endif %}
+        },
+        {% endif -%}
+        {% if cookiecutter.css_extension == 'less' -%}
         {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
+        {% endif -%}
+        {% if cookiecutter.css_extension == 'sass' -%}
+        {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
+        {% endif -%}
         {test: /\.css$/, loader: 'style-loader!css-loader'},
         {test: /\.(png|jpg|gif)$/, loader: 'url-loader', query: {limit: 8192}},  // inline base64 URLs <=8k
         {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader'},

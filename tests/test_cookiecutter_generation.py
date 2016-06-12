@@ -25,6 +25,7 @@ def context():
         "description": "A short description of the project.",
         "version": "0.1.0",
         "existing_project": "n",
+        "css_extension": "none",
         "use_ejs": "n"
     }
 
@@ -90,7 +91,6 @@ def existing_project_context(request, context):
     })
     return context
 
-
 def test_existing_project_features(cookies, existing_project_context):
     result = cookies.bake(extra_context=existing_project_context)
     assert result.exit_code == 0
@@ -102,6 +102,42 @@ def test_existing_project_features(cookies, existing_project_context):
         existing_project_context['repo_name']
     ).isdir()
 
+    assert result.project.isdir()
+
+    paths = build_files_list(str(result.project))
+    assert paths
+    check_paths(paths)
+    check_lint(result)
+
+
+@pytest.fixture(params=['css_extension'])
+def less_project_context(request, context):
+    context.update({request.param: 'less'})
+    return context
+
+def test_less(cookies, less_project_context):
+    result = cookies.bake(extra_context=less_project_context)
+    assert result.exit_code == 0
+    assert result.exception is None
+    assert result.project.basename == less_project_context['repo_name']
+    assert result.project.isdir()
+
+    paths = build_files_list(str(result.project))
+    assert paths
+    check_paths(paths)
+    check_lint(result)
+
+
+@pytest.fixture(params=['css_extension'])
+def sass_project_context(request, context):
+    context.update({request.param: 'sass'})
+    return context
+
+def test_sass(cookies, sass_project_context):
+    result = cookies.bake(extra_context=sass_project_context)
+    assert result.exit_code == 0
+    assert result.exception is None
+    assert result.project.basename == sass_project_context['repo_name']
     assert result.project.isdir()
 
     paths = build_files_list(str(result.project))
