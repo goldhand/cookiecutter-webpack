@@ -1,7 +1,15 @@
 Cookiecutter-webpack
 ====================
-Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux for views and state, and karma + mocha + expect for testing.
+Boilerplate for setting up [webpack 2][webpack2] configuration with [hot reloading][hmr], [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
 
+[webpack2]: https://github.com/webpack/webpack/tree/v2.1.0-beta.13
+[hmr]: https://github.com/gaearon/react-transform-hmr
+[babel]: https://babeljs.io/
+[react]: https://facebook.github.io/react/
+[redux]: http://redux.js.org/index.html
+[karma]: https://github.com/karma-runner/karma
+[mocha]: https://github.com/mochajs/mocha
+[expect]: https://github.com/mjackson/expect
 
 Getting Started
 ---------------
@@ -57,6 +65,7 @@ Options
 * `description`: A short description of the project for the `README.md` file
 * `version`: Project version number
 * `existing_project`: `n` if this is a new project and `y` if you're integrating into an existing project. See the notes below about integrating into an existing project.
+* `use_ejs`: `y` if you want to include `ejs` templates and loaders in the project. Recommended if not using an existing project.
 
 
 Integrating into existing projects
@@ -82,7 +91,8 @@ from cookiecutter.main import cookiecutter
           'author_name': '{{ cookiecutter.author_name }}',
           'description': '{{ cookiecutter.description }}',
           'version': '{{ cookiecutter.version }}',
-          'existing_project': 'y'
+          'existing_project': 'y',
+          'use_ejs': 'n'
       })
 ```
 

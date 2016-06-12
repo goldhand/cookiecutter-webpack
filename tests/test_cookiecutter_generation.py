@@ -24,7 +24,8 @@ def context():
         "email": "Your email",
         "description": "A short description of the project.",
         "version": "0.1.0",
-        "existing_project": "n"
+        "existing_project": "n",
+        "use_ejs": "n"
     }
 
 
@@ -78,7 +79,7 @@ def test_default_configuration(cookies, context):
     check_lint(result)
 
 
-@pytest.fixture(params=['existing_project'])
+@pytest.fixture(params=['existing_project', 'use_ejs'])
 def existing_project_context(request, context):
     static_root = '{}/static/{}'.format(context['repo_name'], context['repo_name'])
     context.update({request.param: 'y'})

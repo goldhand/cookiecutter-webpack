@@ -1,7 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-
+{% if cookiecutter.use_ejs == 'y' -%}
+import HtmlWebpackPlugin from 'html-webpack-plugin';{% endif %}
+{% if cookiecutter.use_ejs == 'y' %}
 
 const HTML_WEBPACK_OPTIONS = {
   main: {
@@ -11,7 +12,7 @@ const HTML_WEBPACK_OPTIONS = {
     appMountId: 'main',
   },
 };
-
+{% endif %}
 module.exports = (opts) => {
 
   const {PROJECT_ROOT, NODE_ENV, PUBLIC_PATH} = opts;
@@ -28,8 +29,8 @@ module.exports = (opts) => {
       filename: '[name]-[hash].js',
     },
 
-    plugins: [
-      new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),
+    plugins: [{% if cookiecutter.use_ejs == 'y' %}
+      new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),{% endif %}
       // shared stuff between chuncks
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
@@ -50,7 +51,7 @@ module.exports = (opts) => {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loaders: ['babel-loader'],
-        },
+        },{% if cookiecutter.use_ejs == 'y' %}
         {
           test: /\.ejs$/,
           loader: 'ejs',
@@ -59,7 +60,7 @@ module.exports = (opts) => {
               path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/templates/'),
             ],
           },
-        },
+        },{% endif %}
         {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
         {test: /\.css$/, loader: 'style-loader!css-loader'},
         {test: /\.(png|jpg|gif)$/, loader: 'url-loader', query: {limit: 8192}},  // inline base64 URLs <=8k

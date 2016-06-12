@@ -47,8 +47,9 @@
     "expect": "^1.20.1",
     "file-loader": "^0.8.5",
     "force-case-sensitivity-webpack-plugin": "^0.1.1",
+    {% if cookiecutter.use_ejs -%}
     "html-webpack-plugin": "^2.19.0",
-    "jasmine-core": "^2.4.1",
+    {% endif %}"jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-browserify": "^5.0.5",

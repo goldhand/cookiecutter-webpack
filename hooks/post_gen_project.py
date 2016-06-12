@@ -7,10 +7,11 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 production_output_path = '{{ cookiecutter.production_output_path }}'
 static_root = '{{ cookiecutter.static_root }}'
 is_existing = '{{ cookiecutter.existing_project }}' == 'y'
+use_ejs = '{{ cookiecutter.use_ejs }}' == 'y'
 
 
 def remove_tilda(project_directory, file_name):
-    """Remove a tilda from a file theat was being protected."""
+    """Remove a tilda from a file that was being protected."""
     current_location = os.path.join(
         project_directory,
         '~{}'.format(file_name)
@@ -33,6 +34,16 @@ def remove_file(project_directory, file_name):
         os.remove(file_location)
 
 
+def remove_dir(project_directory, dir_name):
+    """Remove a dir."""
+    dir_location = os.path.join(
+        project_directory,
+        dir_name
+    )
+    if os.path.isdir(dir_location):
+        shutil.rmtree(dir_location)
+
+
 def amend_file(project_directory, file_name, amendment):
     """Amend a file with a string."""
     file_location = os.path.join(
@@ -46,7 +57,7 @@ def amend_file(project_directory, file_name, amendment):
 
 
 def move_file(project_directory, file_name, target_directory):
-    """Remove a tilda from a file theat was being protected."""
+    """Move a file to another directory."""
     current_location = os.path.join(
         project_directory,
         file_name
@@ -67,6 +78,11 @@ def add_webpack_to_gitignore(project_directory):
         'webpack-stats.json',
         'webpack-stats-production.json')
     amend_file(project_directory, '.gitignore', amend_str)
+
+
+if not use_ejs:
+    """Remove the ejs templates."""
+    remove_dir(static_root, 'templates')
 
 
 if is_existing:

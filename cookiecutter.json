@@ -7,5 +7,6 @@
     "author_name": "Your Name",
     "description": "A short description of the project.",
     "version": "0.1.0",
-    "existing_project": "n"
+    "existing_project": "n",
+    "use_ejs": "{% if cookiecutter.existing_project == 'n' %}y{% else %}n{% endif %}"
 }
