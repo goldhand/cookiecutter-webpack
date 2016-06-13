@@ -1,3 +1,16 @@
+### [Sun Jun 12 2016]
+* Update readme with css_extenson option
+* Add make file
+* Make it easier to hide devtools by default
+* Add css_extension option - [none, less, sass]
+* Make ejs templates optional
+* Fix karma paths
+* Add webpack stats to django gitignore
+* Remove unneeded cookiecutter options
+* Update readme
+* Fix karma conf
+* Update config to use es6 syntex with babel-node
+
 
 ### [2016-06-07]
 ### Added
