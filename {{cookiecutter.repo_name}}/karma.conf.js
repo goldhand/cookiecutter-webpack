@@ -5,11 +5,6 @@
  *  - test runner: karma
  *  - assertions: expect (https://github.com/mjackson/expect)
  */
-
-const OPTIONS = {
-  PROJECT_ROOT: __dirname,
-  NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-};
 const webpackConfig = require('./webpack.config');
 
 
