@@ -15,7 +15,7 @@ const HTML_WEBPACK_OPTIONS = {
 {% endif %}
 module.exports = (opts) => {
 
-  const {PROJECT_ROOT, NODE_ENV, PUBLIC_PATH} = opts;
+  const {PROJECT_ROOT, NODE_ENV} = opts;
 
   return {
     context: PROJECT_ROOT,
@@ -40,7 +40,6 @@ module.exports = (opts) => {
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV,
-          PUBLIC_PATH,
         },
       }),
       // Promise and fetch polyfills

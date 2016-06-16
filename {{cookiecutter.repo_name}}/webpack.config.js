@@ -22,6 +22,8 @@ module.exports = (() => {
       return require('./config/webpack.production.config.js');
     case 'local':
       return require('./config/webpack.local.config.js');
+    case 'test':
+      return require('./config/webpack.test.config.js');
     default:
       return require('./config/webpack.local.config.js');
   }

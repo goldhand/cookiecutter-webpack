@@ -6,10 +6,12 @@
  *  - assertions: expect (https://github.com/mjackson/expect)
  */
 
-const
-  baseConfig = require('./config/webpack.base.config')(
-    {PROJECT_ROOT: __dirname}
-  );
+const OPTIONS = {
+  PROJECT_ROOT: __dirname,
+  NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+};
+const webpackConfig = require('./webpack.config');
+
 
 module.exports = function(config) {
   config.set({
@@ -25,10 +27,7 @@ module.exports = function(config) {
       '{{ cookiecutter.static_root }}/**/__tests__/**/*.js': ['webpack', 'sourcemap'],
     },
 
-    webpack: {
-      devtool: 'inline-source-map',
-      module: baseConfig.module,
-    },
+    webpack: webpackConfig,
 
     webpackMiddleware: {
       noInfo: true,
