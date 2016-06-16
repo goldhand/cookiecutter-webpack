@@ -72,7 +72,8 @@
     {% if cookiecutter.existing_project == 'y' -%}
     "webpack-bundle-tracker": "0.0.93",
     {% endif -%}
-    "webpack-dev-server": "^2.0.0-beta"
+    "webpack-dev-server": "^2.0.0-beta",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^2.11.1",

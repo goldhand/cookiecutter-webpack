@@ -43,6 +43,11 @@ module.exports = (opts) => {
           PUBLIC_PATH,
         },
       }),
+      // Promise and fetch polyfills
+      new webpack.ProvidePlugin({
+        Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+        fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      }),
     ], // add all common plugins here
 
     module: {
