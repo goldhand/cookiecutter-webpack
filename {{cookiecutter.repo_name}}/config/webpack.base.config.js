@@ -31,12 +31,6 @@ module.exports = (opts) => {
 
     plugins: [{% if cookiecutter.use_ejs == 'y' %}
       new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),{% endif %}
-      // shared stuff between chuncks
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: Infinity,
-        filename: 'vendor-[hash].js',
-      }),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV,

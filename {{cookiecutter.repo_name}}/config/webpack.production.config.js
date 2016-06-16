@@ -23,6 +23,12 @@ module.exports = (opts) => {
       ...config.plugins,{% if cookiecutter.existing_project == 'y' %}
       // production bundle stats file
       new BundleTracker({filename: './webpack-stats-production.json'}),{% endif %}
+      // shared stuff between chuncks
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity,
+        filename: 'vendor-[hash].js',
+      }),
       // pass options to uglify
       new webpack.LoaderOptionsPlugin({
         minimize: true,

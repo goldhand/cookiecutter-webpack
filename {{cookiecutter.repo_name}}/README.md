@@ -33,10 +33,10 @@ This will run all tests in the [`./{{ cookiecutter.static_root }}/__tests__`][te
 
 
 React-Redux Project Structure
------------------
+-----------------------------
 Outline the structure of the project.
 
-### Source `./{{ cookiecutter.static_root }}/`
+#### Source `./{{ cookiecutter.static_root }}/`
 Main project source.
 
 #### Actions `./{{ cookiecutter.static_root }}/actions/`

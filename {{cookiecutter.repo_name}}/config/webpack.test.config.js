@@ -1,22 +1,19 @@
-import webpack from 'webpack';
 import baseConfig from './webpack.base.config.js';
 
 // Karma webpack config
 module.exports = (opts) => {
 
-  const
-    {NODE_ENV} = opts,
-    config = baseConfig(opts);
+  const config = baseConfig(opts);
 
   return {
     devtool: 'inline-source-map',
-    module: config.module,
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV,
-        },
-      }),
-    ],
+    module: {
+      ...config.module,
+      loaders: [
+        ...config.module.loaders,
+        {test: /(\.jsx|\.js)$/, loader: 'eslint-loader', exclude: /node_modules/},
+      ],
+    },
+    plugins: config.plugins,
   };
 };

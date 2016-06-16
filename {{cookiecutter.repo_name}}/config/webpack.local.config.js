@@ -15,18 +15,16 @@ module.exports = (opts) => {
       ...config.output,
       publicPath: 'http://localhost:8080/bundles/',
     },{% endif %}
-    module: {
-      ...config.module,
-      loaders: [
-        ...config.module.loaders,
-        // local loaders
-        {test: /(\.jsx|\.js)$/, loader: 'eslint-loader', exclude: /node_modules/},
-      ],
-    },
     plugins: [
       ...config.plugins,
       // local plugins
       new ForceCaseSensitivityPlugin(),  // OSX wont check but other unix os will
+      // shared stuff between chuncks
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity,
+        filename: 'vendor-[hash].js',
+      }),
       new webpack.NoErrorsPlugin(),{% if cookiecutter.existing_project == 'y' %}
       // local bundle stats file
       new BundleTracker({filename: './webpack-stats.json'}),{% endif %}

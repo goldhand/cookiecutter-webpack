@@ -1,5 +1,4 @@
 import expect, { createSpy, spyOn, isSpy } from 'expect';
-import deepFreeze from 'deep-freeze';
 
 
 const dummyReducer = (state, action) => {
@@ -27,8 +26,8 @@ const dummyTestIncrease = () => {
   const action = {
     type: 'INCREASE',
   };
-  deepFreeze(stateBefore);
-  deepFreeze(action);
+  Object.freeze(stateBefore);
+  Object.freeze(action);
 
   expect(
     dummyReducer(stateBefore, action)
@@ -45,8 +44,8 @@ const dummyTestDecrease = () => {
   const action = {
     type: 'DECREASE',
   };
-  deepFreeze(stateBefore);
-  deepFreeze(action);
+  Object.freeze(stateBefore);
+  Object.freeze(action);
 
   expect(
     dummyReducer(stateBefore, action)
