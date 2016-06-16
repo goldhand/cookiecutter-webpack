@@ -20,6 +20,7 @@ class CounterApp extends Component {
           value={this.props.value}
           {...this.props.actions}
         />
+        <ProcessEnv {...process.env} />
       </div>
     );
   }
@@ -39,3 +40,23 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(CounterApp);
+
+
+// Dev tools controls and process.env info
+function ProcessEnv({
+    NODE_ENV,
+}) {
+  return (
+    <ul>
+      <li><strong>{'process.env:'}</strong></li>
+      <li>{`NODE_ENV: ${NODE_ENV}`}</li>
+      <li><strong>Redux: Dev Tools:</strong></li>
+      <li>ctrl+h - show/hide</li>
+      <li>ctrl+q - change position</li>
+      <li>ctrl+m - toggle monitor</li>
+    </ul>
+  );
+}
+ProcessEnv.propTypes = {
+  NODE_ENV: PropTypes.string.isRequired,
+};
