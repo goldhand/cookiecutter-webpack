@@ -1,6 +1,8 @@
 import path from 'path';
-import webpack from 'webpack';{% if cookiecutter.existing_project == 'y' %}
-import BundleTracker from 'webpack-bundle-tracker';{% endif %}
+import webpack from 'webpack';
+{% if cookiecutter.existing_project == 'y' -%}
+import BundleTracker from 'webpack-bundle-tracker';
+{% endif -%}
 
 import baseConfig from './webpack.base.config.js';
 
@@ -20,15 +22,11 @@ module.exports = (opts) => {
       publicPath: CDN_PATH || '/',
     },
     plugins: [
-      ...config.plugins,{% if cookiecutter.existing_project == 'y' %}
+      ...config.plugins,
+      {% if cookiecutter.existing_project == 'y' -%}
       // production bundle stats file
-      new BundleTracker({filename: './webpack-stats-production.json'}),{% endif %}
-      // shared stuff between chuncks
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: Infinity,
-        filename: 'vendor-[hash].js',
-      }),
+      new BundleTracker({filename: './webpack-stats-production.json'}),
+      {% endif -%}
       // pass options to uglify
       new webpack.LoaderOptionsPlugin({
         minimize: true,
@@ -44,6 +42,8 @@ module.exports = (opts) => {
         },
         sourceMap: false,
       }),
+      // removes duplicate modules
+      new webpack.optimize.DedupePlugin(),
     ],
   };
 };

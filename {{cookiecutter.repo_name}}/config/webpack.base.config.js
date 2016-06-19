@@ -1,8 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
 {% if cookiecutter.use_ejs == 'y' -%}
-import HtmlWebpackPlugin from 'html-webpack-plugin';{% endif %}
-{% if cookiecutter.use_ejs == 'y' %}
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+
 
 const HTML_WEBPACK_OPTIONS = {
   main: {
@@ -12,16 +12,53 @@ const HTML_WEBPACK_OPTIONS = {
     appMountId: 'main',
   },
 };
-{% endif %}
+{%- endif %}
+
 module.exports = (opts) => {
 
   const {PROJECT_ROOT, NODE_ENV} = opts;
+
+  let plugins = [
+    // add all common plugins here
+    {% if cookiecutter.use_ejs == 'y' -%}
+    new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),
+    {% endif -%}
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(NODE_ENV),
+      },
+    }),
+    // Promise and fetch polyfills
+    new webpack.ProvidePlugin({
+      Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+    }),
+  ];
+  if (NODE_ENV !== 'test') {
+    // karma webpack can't use these
+    plugins = [
+      ...plugins,
+      // vendor chuncks
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity,
+        filename: 'vendor-[hash].js',
+      }),
+      // shared stuff between chuncks
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'common',
+        filename: 'common-[hash].js',
+        chunks: [],  // add common modules here
+      }),
+    ];
+  }
 
   return {
     context: PROJECT_ROOT,
 
     entry: {
       main: path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/index'),
+      vendor: ['react', 'redux', 'react-router', 'react-redux', 'react-dom'],
     },
 
     output: {
@@ -29,19 +66,7 @@ module.exports = (opts) => {
       filename: '[name]-[hash].js',
     },
 
-    plugins: [{% if cookiecutter.use_ejs == 'y' %}
-      new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),{% endif %}
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV,
-        },
-      }),
-      // Promise and fetch polyfills
-      new webpack.ProvidePlugin({
-        Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
-        fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
-      }),
-    ], // add all common plugins here
+    plugins,
 
     module: {
       loaders: [

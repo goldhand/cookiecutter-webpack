@@ -12,8 +12,8 @@
  */
 const OPTIONS = {
   PROJECT_ROOT: __dirname,
-  NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-  CDN_PATH: JSON.stringify(process.env.CDN_PATH),
+  NODE_ENV: process.env.NODE_ENV,
+  CDN_PATH: process.env.CDN_PATH,
 };
 
 module.exports = (() => {

@@ -19,7 +19,6 @@ module.exports = function(config) {
     preprocessors: {
       // add webpack as a preprocessor
       '{{ cookiecutter.static_root }}/**/*.js': ['webpack', 'sourcemap'],
-      '{{ cookiecutter.static_root }}/**/__tests__/**/*.js': ['webpack', 'sourcemap'],
     },
 
     webpack: webpackConfig,
