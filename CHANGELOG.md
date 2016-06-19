@@ -1,3 +1,13 @@
+### [Sat Jun 18 2016]
+* Refactor configs
+* Remove phantomjs from karma
+* Add open_source_license to cookiecutter options
+* Fix test configuration
+* :shirt: Appease the linter
+* Fix counter tests
+* Add webpack test config
+* Add promise and fetch polyfills
+
 ### [Sun Jun 12 2016]
 * Update readme with css_extenson option
 * Add make file
