@@ -5,7 +5,8 @@
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
     "babel": "./node_modules/.bin/babel-node --presets es2015",
-    "test": "NODE_ENV=test npm run babel -- ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "test": "NODE_ENV=test npm run babel -- ./node_modules/karma/bin/karma start",
+    "watch:test": "npm test -- --auto-watch --no-single-run",
     "webpack": "npm run babel -- ./node_modules/.bin/webpack --progress",
     "build": "NODE_ENV=production npm run webpack",
     "dev": "NODE_ENV=local npm run babel -- ./node_modules/.bin/webpack-dev-server --progress --hot",
@@ -88,11 +89,9 @@
     "karma-browserify": "^5.0.5",
     "karma-chrome-launcher": "^1.0.1",
     "karma-mocha": "^1.0.1",
-    "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "goldhand/karma-webpack",{# TODO: update when karma-webpack supports webpack 2.1.0-betas #}
     "mocha": "^2.5.3",
-    "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "^15.1.0",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.3.1",
