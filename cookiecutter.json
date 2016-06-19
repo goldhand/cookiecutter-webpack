@@ -1,7 +1,7 @@
 {
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name|replace(' ', '')|lower }}",
-    "repo_owner": "github_username",
+    "repo_owner": "",
     "static_root": "src",
     "production_output_path": "src/dist",
     "author_name": "Your Name",
@@ -9,5 +9,6 @@
     "version": "0.1.0",
     "existing_project": "n",
     "css_extension": ["none", "less", "sass"],
-    "use_ejs": "{% if cookiecutter.existing_project == 'n' %}y{% else %}n{% endif %}"
+    "use_ejs": "{% if cookiecutter.existing_project == 'n' %}y{% else %}n{% endif %}",
+    "open_source_license": "ISC"
 }

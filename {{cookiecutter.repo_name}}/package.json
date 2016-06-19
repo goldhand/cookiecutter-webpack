@@ -11,18 +11,23 @@
     "dev": "NODE_ENV=local npm run babel -- ./node_modules/.bin/webpack-dev-server --progress --hot",
     {% if cookiecutter.existing_project == 'y' -%}
     "python": "python manage.py runserver",
-    "start": "npm run dev & npm run python"{% else %}"start": "npm run dev"{%- endif %}
+    "start": "npm run dev & npm run python"
+    {% else -%}
+    "start": "npm run dev"
+    {% endif -%}
   },
+  "author": "{{ cookiecutter.author_name }}",
+  "license": "{{ cookiecutter.open_source_license }}",
+  {% if cookiecutter.repo_owner -%}
   "repository": {
     "type": "git",
     "url": "git+https://github.com/{{ cookiecutter.repo_owner }}/{{ cookiecutter.repo_name }}.git"
   },
-  "author": "{{ cookiecutter.author_name }}",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/{{ cookiecutter.repo_owner }}/{{ cookiecutter.repo_name }}/issues"
   },
   "homepage": "https://github.com/{{ cookiecutter.repo_owner }}/{{ cookiecutter.repo_name }}#readme",
+  {% endif -%}
   "dependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.9.0",
@@ -56,11 +61,9 @@
     "node-sass": "^3.7.0",
     {% endif -%}
     "react": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
-    "react-transform-hmr": "^1.0.4",
     "redux": "^3.5.2",
     {% if cookiecutter.css_extension == 'sass' -%}
     "sass": "^0.5.0",
@@ -90,6 +93,8 @@
     "karma-webpack": "goldhand/karma-webpack",{# TODO: update when karma-webpack supports webpack 2.1.0-betas #}
     "mocha": "^2.5.3",
     "phantomjs-prebuilt": "^2.1.7",
+    "react-addons-test-utils": "^15.1.0",
+    "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dispatch": "^2.2.0",
     "redux-devtools-dock-monitor": "^1.1.1",
