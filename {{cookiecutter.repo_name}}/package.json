@@ -1,7 +1,7 @@
 {
-  "name": "{{ cookiecutter.project_name }}",
+  "name": "{{ cookiecutter.repo_name }}",
   "version": "{{ cookiecutter.version }}",
-  "description": "",
+  "description": "{{ cookiecutter.project_name }}",
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
     "babel": "./node_modules/.bin/babel-node --presets es2015",
