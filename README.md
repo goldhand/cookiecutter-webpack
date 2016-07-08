@@ -1,5 +1,7 @@
 Cookiecutter-webpack
 ====================
+[![Circle CI](https://circleci.com/gh/hzdg/cookiecutter-webpack.svg?style=svg&circle-token=a56620e3d7fd17dcc07e8325b5999982fe0d1685)](https://circleci.com/gh/hzdg/cookiecutter-webpack)
+
 Boilerplate for setting up [webpack 2][webpack2] configuration with [hot reloading][hmr], [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
 
 [webpack2]: https://github.com/webpack/webpack/tree/v2.1.0-beta.13
@@ -121,5 +123,5 @@ $ pip install -r requirements.txt && npm install
 ```
 Run build tests:
 ```sh
-$ npm test
+$ make test
 ```

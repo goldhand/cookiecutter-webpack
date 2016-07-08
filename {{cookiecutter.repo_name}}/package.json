@@ -2,6 +2,9 @@
   "name": "{{ cookiecutter.repo_name }}",
   "version": "{{ cookiecutter.version }}",
   "description": "{{ cookiecutter.project_name }}",
+  "engines" : {
+    "node" : ">=4"
+  },
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
     "babel": "./node_modules/.bin/babel-node --presets es2015",

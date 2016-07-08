@@ -9,12 +9,15 @@
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",
-    "eslint": "^2.11.1",
+    "eslint": "^3.0.1",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^5.0.1"
   },
+  "engines" : {
+    "node" : ">=4"
+  },
   "scripts": {
-    "test": "py.test",
+    "test": "py.test tests",
     "version": "make test && make changelog && git add -p CHANGELOG.md && git checkout CHANGELOG.md"
   },
   "repository": {
@@ -30,7 +33,7 @@
     "boilerplate"
   ],
   "author": "Will Farley <a.will.farley@gmail.com>",
-  "license": "BSD",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/hzdg/cookiecutter-webpack/issues"
   },

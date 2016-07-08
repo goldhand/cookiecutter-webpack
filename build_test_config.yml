@@ -1,0 +1,13 @@
+default_context:
+  "project_name": "build test"
+  "repo_name": "build_test"
+  "repo_owner": "build_test"
+  "static_root": "src"
+  "production_output_path": "dist"
+  "author_name": "Your Name"
+  "description": "A short description of the project."
+  "version": "0.1.0"
+  "existing_project": "n"
+  "css_extension": "none"
+  "use_ejs": "y"
+  "open_source_license": "ISC"

@@ -33,6 +33,7 @@ pip-log.txt
 nosetests.xml
 htmlcov
 .cache/
+build_test/
 
 # egg
 *.egg-info

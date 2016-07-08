@@ -1,6 +1,16 @@
+BUILD_WEBPACK_CMD := cookiecutter --no-input --config-file build_test_config.yml .
+BUILD_PATH := './build_test'
+
+examples: clean
+	@$(BUILD_WEBPACK_CMD)
+	@cd $(BUILD_PATH) && npm install
+
+testbuild: examples
+	cd $(BUILD_PATH) && npm test
 
 test:
-	npm test
+	py.test tests
+	make testbuild
 
 major:
 	npm version major
@@ -21,5 +31,8 @@ changelog: changelog.template.ejs
 	@rm changelog.template.ejs
 	@echo "Added changes since $$(git describe --abbrev=0) to CHANGELOG.md"
 
+clean:
+	@rm -rf $(BUILD_PATH)
 
-.PHONY: changelog examples test
+
+.PHONY: changelog examples test clean

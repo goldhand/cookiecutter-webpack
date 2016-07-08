@@ -1,0 +1,9 @@
+machine:
+  python:
+    version: 2.7.9
+  node:
+    version: 5.10.1
+
+test:
+  override:
+    - make test
