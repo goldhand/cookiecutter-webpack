@@ -11,6 +11,10 @@
       }]]
     },
     "production": {},
-    "test": {}
+    "test": {
+      "plugins": [
+        ["__coverage__", {"ignore": "**/__tests__/**"}]
+      ]
+    }
   }
 }

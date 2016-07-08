@@ -15,7 +15,7 @@
     "start": "npm run dev & npm run python"
     {% else -%}
     "start": "npm run dev"
-    {% endif -%}
+  {% endif -%}
   },
   "author": "{{ cookiecutter.author_name }}",
   "license": "{{ cookiecutter.open_source_license }}",
@@ -47,7 +47,6 @@
     "ejs-loader": "^0.3.0",
     {% endif -%}
     "es6-promise": "^3.2.1",
-    "eslint-loader": "^1.3.0",
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^5.1.1",
     "exports-loader": "^0.6.3",
@@ -56,6 +55,7 @@
     "html-webpack-plugin": "^2.19.0",
     {% endif -%}
     "imports-loader": "^0.6.5",
+    "lodash": "^4.13.1",
     {% if cookiecutter.css_extension == 'less' -%}
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
@@ -83,13 +83,16 @@
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^2.11.1",
+    "babel-plugin-__coverage__": "^11.0.0",
+    "eslint": "^3.0.1",
+    "eslint-loader": "^1.3.0",
     "expect": "^1.20.1",
     "force-case-sensitivity-webpack-plugin": "^0.1.1",
     "karma": "^1.1.0",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-browserify": "^5.0.5",
     "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "goldhand/karma-webpack",{# TODO: update when karma-webpack supports webpack 2.1.0-betas #}
