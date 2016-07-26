@@ -2,6 +2,8 @@
 ===============================
 {{ cookiecutter.description }}
 
+[![Cookiecutter-webpack](https://img.shields.io/badge/built%20with-Cookiecutter%20Webpack-f38230.svg)][cookiecutter-webpack]
+
 
 Getting Started
 ---------------
@@ -97,9 +99,10 @@ There are two setting configurations: _Local_ and _Production_. Both of these se
 * Minimize code
 * Production plugins
 
-
+{% if cookiecutter.use_ejs -%}
 ### Templates
 [Template options](https://github.com/jaketrent/html-webpack-template/blob/faac42d0720d52b444e65aa9a151e0ad8504effc/README.md#basic-usage)
+{% endif -%}
 
 
 -----------------------------------
@@ -122,5 +125,6 @@ The controls can be configured by editing the `DockMonitor` component's attribut
 [karma]: https://github.com/karma-runner/karma
 [mocha]: https://github.com/mochajs/mocha
 [expect]: https://github.com/mjackson/expect
+[cookiecutter-webpack]: https://github.com/hzdg/cookiecutter-webpack
 
 [test-dir]: /{{ cookiecutter.static_root }}/__tests__/

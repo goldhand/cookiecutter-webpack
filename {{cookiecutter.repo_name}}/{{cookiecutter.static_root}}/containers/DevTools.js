@@ -9,7 +9,7 @@ import Dispatcher from 'redux-devtools-dispatch';
 import MultipleMonitors from 'redux-devtools-multiple-monitors';
 
 
-const REDUX_DEV_TOOLS_VISIBLE = true;
+const REDUX_DEV_TOOLS_VISIBLE = false;
 
 // createDevTools takes a monitor and produces a DevTools component
 export default createDevTools(

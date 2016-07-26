@@ -1,17 +1,22 @@
 import {createStore, applyMiddleware, compose} from 'redux';
-import rootReducer from '../reducers';
+import rootReducer from 'reducers';
 import {persistState} from 'redux-devtools';
 
 
-// credit: @nicksp
 export default function configureStore(initialState) {
 
-  let middleware = applyMiddleware();
   let enhancer;
+  // add project middleware here
+  let middlewares = [
+  ];
+  let middleware = applyMiddleware();
 
   if (process.env.NODE_ENV !== 'production') {
 
-    let middlewares = [require('redux-immutable-state-invariant')()];
+    middlewares = [
+      ...middlewares,
+      require('redux-immutable-state-invariant')(),
+    ];
     middleware = applyMiddleware(...middlewares);
 
     let getDebugSessionKey = function() {
