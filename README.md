@@ -23,6 +23,8 @@ Download `cookiecutter` to a global python path
 In your project directory run
 
     $ cookiecutter git@github.com:hzdg/cookiecutter-webpack.git
+    if you got error when run the command (on windows), try this
+    $ cookiecutter https://github.com/hzdg/cookiecutter-webpack.git
 
 Answer the prompts then `cd` into your newly created project directory.
 
