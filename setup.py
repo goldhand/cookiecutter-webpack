@@ -44,7 +44,7 @@ setup(
     long_description=readme + '\n\n' + changelog,
     author='Will Farley',
     author_email='a.will.farley@gmail.com',
-    url='https://github.com/hzdg/cookiecutter-webpack',
+    url='https://github.com/goldhand/cookiecutter-webpack',
     packages=[],
     license='BSD',
     zip_safe=False,

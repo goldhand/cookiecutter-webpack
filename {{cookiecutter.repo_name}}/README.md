@@ -125,6 +125,6 @@ The controls can be configured by editing the `DockMonitor` component's attribut
 [karma]: https://github.com/karma-runner/karma
 [mocha]: https://github.com/mochajs/mocha
 [expect]: https://github.com/mjackson/expect
-[cookiecutter-webpack]: https://github.com/hzdg/cookiecutter-webpack
+[cookiecutter-webpack]: https://github.com/goldhand/cookiecutter-webpack
 
 [test-dir]: /{{ cookiecutter.static_root }}/__tests__/

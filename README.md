@@ -1,6 +1,6 @@
 Cookiecutter-webpack
 ====================
-[![Circle CI](https://circleci.com/gh/hzdg/cookiecutter-webpack.svg?style=svg&circle-token=a56620e3d7fd17dcc07e8325b5999982fe0d1685)](https://circleci.com/gh/hzdg/cookiecutter-webpack)
+[![CircleCI](https://circleci.com/gh/goldhand/cookiecutter-webpack.svg?style=svg)](https://circleci.com/gh/goldhand/cookiecutter-webpack)
 
 Boilerplate for setting up [webpack 2][webpack2] configuration with [hot reloading][hmr], [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
 
@@ -22,7 +22,7 @@ Download `cookiecutter` to a global python path
 
 In your project directory run
 
-    $ cookiecutter https://github.com/hzdg/cookiecutter-webpack.git
+    $ cookiecutter https://github.com/goldhand/cookiecutter-webpack.git
 
 Answer the prompts then `cd` into your newly created project directory.
 
@@ -50,7 +50,7 @@ You should also create a new git repo and push it to github
 $ git init
 $ git add .
 $ git commit -m "Init"
-$ git remote add origin git@github.com:hzdg/project_name.git
+$ git remote add origin git@github.com:goldhand/project_name.git
 $ git push -u origin master
 ```
 
@@ -83,12 +83,12 @@ Here is a django project post hook example that chains this through a django coo
 from cookiecutter.main import cookiecutter
 
   cookiecutter(
-      'git@github.com:hzdg/cookiecutter-webpack.git',
+      'git@github.com:goldhand/cookiecutter-webpack.git',
       replay=False, overwrite_if_exists=True, output_dir='../',
       checkout=None, no_input=True, extra_context={
           'project_name': '{{ cookiecutter.project_name }}',
           'repo_name': '{{ cookiecutter.repo_name }}',
-          'repo_owner': 'hzdg',
+          'repo_owner': 'goldhand',
           'static_root': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}',
           'production_output_path': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}/dist/',
           'author_name': '{{ cookiecutter.author_name }}',
@@ -105,7 +105,7 @@ The flag `existing_project` will move/remove some files and dependencies and als
 ### Using command line
 Just make sure you use the `--overwrite-if-exists` [ or `-f`] flag so cookiecutter can work within your existing project structure. You will also probably want to point to your existing projects parent directory and make sure you use the same `repo_name` as the project directory so your `package.json` files are installed at the project root.
 
-	cookiecutter -f -output-dir ../ git@github.com:hzdg/cookiecutter-webpack.git
+	cookiecutter -f -output-dir ../ git@github.com:goldhand/cookiecutter-webpack.git
 
 
 Contributing
@@ -115,7 +115,7 @@ Accepting pull requests!
 
 Clone the project:
 ```sh
-$ git clone git@github.com:hzdg/cookiecutter-webpack.git
+$ git clone git@github.com:goldhand/cookiecutter-webpack.git
 ```
 Install python and npm dependencies:
 ```sh
