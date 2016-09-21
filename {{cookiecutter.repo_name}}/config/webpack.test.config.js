@@ -10,8 +10,8 @@ module.exports = (opts) => {
     devtool: 'inline-source-map',
     module: {
       ...config.module,
-      loaders: [
-        ...config.module.loaders,
+      rules: [
+        ...config.module.rules,
         {test: /(\.jsx|\.js)$/, loader: 'eslint-loader', exclude: /node_modules/},
       ],
     },

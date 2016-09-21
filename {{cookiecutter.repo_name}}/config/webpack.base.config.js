@@ -69,7 +69,7 @@ module.exports = (opts) => {
     plugins,
 
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
@@ -99,7 +99,7 @@ module.exports = (opts) => {
     },
 
     resolve: {
-      extensions: ['', '.js', '.jsx'],
+      extensions: ['.js', '.jsx'],
       modules: [
         path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}'),
         'node_modules',
