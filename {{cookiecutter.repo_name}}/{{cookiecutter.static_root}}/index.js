@@ -16,7 +16,9 @@ let ProjectElement;
 if (process.env.NODE_ENV !== 'production') {
 
   // development
-  const DevTools = require('./containers/DevTools').default;
+  const DevTools = window.devToolsExtension
+    ? () => null
+    : require('./containers/DevTools').default;
 
   ProjectElement = (
     <div>
