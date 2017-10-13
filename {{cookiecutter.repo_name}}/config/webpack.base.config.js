@@ -78,7 +78,7 @@ module.exports = (opts) => {
         {% if cookiecutter.use_ejs == 'y' -%}
         {
           test: /\.ejs$/,
-          loader: 'ejs',
+          loader: 'ejs-loader',
           query: {
             includePaths: [
               path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/templates/'),
